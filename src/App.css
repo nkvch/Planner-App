@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+.calendar {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+}
+.month-name {
+  float: left;
+}
+.year-name {
+  float: right;
+}
+.day {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: large;
+}
+.today {
+  background-color: rgb(184, 85, 85);
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  font-size: large;
+  color: white;
+}
