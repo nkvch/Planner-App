@@ -1,18 +1,6 @@
 import React from 'react';
+import Day from '../components/Day'
 
-class Day extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    render() {
-        if (!this.props.isToday) {
-            return <div className="day">{this.props.day}</div>
-        } else {
-            return <div className="today">{this.props.day}</div>
-        }
-    }
-}
 
 class Calendar extends React.Component{
     constructor(props) {
@@ -119,6 +107,18 @@ class Calendar extends React.Component{
                 <div className="year-name"><h1>{this.state.year}</h1></div>
             </div>
             <table className="table-calendar">
+            <thead>
+                <tr className="week-days">
+                    <td className="weekend">Sun</td>
+                    <td>Mon</td>
+                    <td>Tue</td>
+                    <td>Wed</td>
+                    <td>Thu</td>
+                    <td>Fri</td>
+                    <td className="weekend">Sat</td>
+                </tr>
+            </thead>
+            <tbody>
                 { 
                     this.state.weeksArray.map(week => 
                         <tr>
@@ -132,6 +132,7 @@ class Calendar extends React.Component{
                         </tr>
                         )
                 }
+            </tbody>
             </table>
             </div>
         )
