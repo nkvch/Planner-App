@@ -2,17 +2,21 @@ import React from 'react';
 import UserService from '../services/UserService';
 
 class UserCreate extends React.Component {
+
+    state = {
+        firstName: "",
+        lastName: "",
+        email: "",
+        dob: "",
+        // login: "",
+        // password: "",
+    }
     constructor(props) {
+
         super(props);
-        this.state = {
-            firstName: "",
-            lastName: "",
-            email: "",
-            dob: "",
-            // login: "",
-            // password: "",
-        }
+
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleInputChange(event) {
@@ -26,8 +30,9 @@ class UserCreate extends React.Component {
     }
 
     handleSubmit(event) {
-        UserService.postUser(this.state);
         event.preventDefault();
+        console.log(JSON.stringify(this.state));
+        UserService.postUser(this.state);
     }
 
     render() {
