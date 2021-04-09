@@ -9,7 +9,7 @@ class UserService {
     }
 
     postUser = async(user) => {
-        let res = await axios.post(USERS_REST_API_URL, JSON.stringify(user));
+        let res = await axios.post(USERS_REST_API_URL, user);
         console.log(res);
     }
 

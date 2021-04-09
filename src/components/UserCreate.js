@@ -19,6 +19,7 @@ class UserCreate extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
@@ -31,7 +32,6 @@ class UserCreate extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(JSON.stringify(this.state));
         UserService.postUser(this.state);
     }
 
