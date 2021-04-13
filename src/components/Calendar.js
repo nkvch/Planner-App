@@ -72,12 +72,10 @@ class Calendar extends React.Component{
         let d = 0; //days counter
         let weeksArray = [];
         let actualDay = daysArray[d];
-        console.log(actualDay);
         let firstWeek = new Array(actualDay.getDay()).fill(null);
         while(firstWeek.length < 7) {
             firstWeek.push(actualDay);
             d++;
-            console.log(d);
             actualDay = daysArray[d];
         }
         weeksArray.push(firstWeek);
@@ -101,10 +99,12 @@ class Calendar extends React.Component{
     render() {
 
         return (
+            <div className="calendar-page">
+            <h1>calendar</h1>
             <div className="calendar">
             <div className="month-and-year">
-                <div className="month-name"><h1>{this.months[this.state.month]}</h1></div>
-                <div className="year-name"><h1>{this.state.year}</h1></div>
+                <div className="month-name"><h2>{this.months[this.state.month]}</h2></div>
+                <div className="year-name"><h2>{this.state.year}</h2></div>
             </div>
             <table className="table-calendar">
             <thead>
@@ -134,6 +134,7 @@ class Calendar extends React.Component{
                 }
             </tbody>
             </table>
+            </div>
             </div>
         )
     }

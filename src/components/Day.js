@@ -7,9 +7,9 @@ class Day extends React.Component {
     }
     render() {
         if (!this.props.isToday) {
-            return <div className="day">{this.props.day}</div>
+            return <div className="day"><p>{this.props.day}</p></div>
         } else {
-            return <div className="today">{this.props.day}</div>
+            return <div className="today"><p>{this.props.day}</p></div>
         }
     }
 }

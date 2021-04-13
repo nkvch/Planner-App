@@ -37,23 +37,25 @@ class UserCreate extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <div className="create-user-page">
+            <h1>create user</h1>
+            <form onSubmit={this.handleSubmit} className="user-create">
             <table>
             <tbody>
             <tr>
-                <td><label>First name</label></td>
+                <td><label for="firstName">First name</label></td>
                 <td><input name="firstName" type="text" value={this.state.firstName} onChange={this.handleInputChange}/></td>
             </tr>
             <tr>
-                <td><label>Last name</label></td>
+                <td><label for="lastName">Last name</label></td>
                 <td><input name="lastName" type="text" value={this.state.lastName} onChange={this.handleInputChange}/></td>
             </tr>
             <tr>
-                <td><label>Email</label></td>
+                <td><label for="email">Email</label></td>
                 <td><input name="email" type="email" value={this.state.email} onChange={this.handleInputChange}/></td>
             </tr>
             <tr>
-                <td><label>Date of birth</label></td>
+                <td><label for="dob">Date of birth</label></td>
                 <td><input name="dob" type="date" value={this.state.dob} onChange={this.handleInputChange}/></td>
             </tr>
             {/* <tr>
@@ -64,13 +66,11 @@ class UserCreate extends React.Component {
                 <td><label>Password</label></td>
                 <td><input name="password" type="password" value={this.state.password} onChange={this.handleInputChange}></input></td>
             </tr> */}
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Log in" /></td>
-            </tr>
             </tbody>
             </table>
+            <input type="submit" value="create" />
             </form>
+            </div>
         )
     }
 }

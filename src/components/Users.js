@@ -18,9 +18,9 @@ class Users extends React.Component {
 
     render (){
         return (
-            <div>
-                <h1 className="userslist-heading">Users List</h1>
-                <table className = "userslist">
+            <div className="userslist-page">
+                <h1>users list</h1>
+                <table className="userslist">
                     <thead>
                         <tr>
                             <td> User First Name</td>
