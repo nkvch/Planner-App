@@ -34,7 +34,7 @@ const HomePage = function() {
           Maecenas eu erat at tellus finibus lobortis. Nulla auctor ipsum quis nunc convallis, ut fermentum ex gravida. Mauris lobortis euismod tortor ac vulputate.
            Curabitur accumsan ipsum at nibh venenatis, nec placerat velit commodo. </p>
       </article>
-      <i class="far fa-calendar-alt"></i>
+      <i className="far fa-calendar-alt"></i>
     </div>
   )
 }

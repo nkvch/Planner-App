@@ -6,11 +6,7 @@ class Day extends React.Component {
         this.state = {}
     }
     render() {
-        if (!this.props.isToday) {
-            return <div className="day"><p>{this.props.day}</p></div>
-        } else {
-            return <div className="today"><p>{this.props.day}</p></div>
-        }
+        return <div className={this.props.currMonth ? this.props.isToday ? "today" : "day" : "other-day"}><p>{this.props.day}</p></div>
     }
 }
 

@@ -12,7 +12,7 @@ class NavBar extends React.Component {
     render() {
     return (
         <header>
-        <i class="far fa-calendar-alt"></i>
+        <i className="far fa-calendar-alt"></i>
           <nav>
               <ul className="links">
                 <li><Link to="/"><p>home</p></Link></li>

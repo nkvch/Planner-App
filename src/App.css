@@ -110,7 +110,15 @@ nav {
   font-size: large;
   color: white;
 }
-.day > p , .today > p {
+.other-day {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #1f5ec486;
+  border-radius: 0.5em;
+  font-size: large;
+  color: rgba(0, 0, 0, 0.5);
+}
+.day > p , .today > p, .other-day > p {
   margin: 0;
   margin-top: 5px;
   margin-left: 5px;
