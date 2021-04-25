@@ -20,6 +20,7 @@ class NavBar extends React.Component {
                   <li><Link to="/usercreate"><p>create user</p></Link></li>
                   <li><Link to="/users"><p>users</p></Link></li>
               </ul>
+              <Link to="/usercreate/login-password"></Link>
           </nav>
           </header>
       );

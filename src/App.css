@@ -160,7 +160,10 @@ nav {
   height: 30px;
   width: 250px;
 }
-.user-create input[type=text], input[type=email], input[type=date] {
+.user-create input[type=text],
+.user-create input[type=email],
+.user-create input[type=date],
+.user-create input[type=password] {
   padding: 0 10px;
   margin-left: 20px;
   margin-bottom: 3px;
@@ -181,6 +184,11 @@ nav {
   background: #357cda;
   border-color: #357cda;
   transition: all 0.2s ease 0s;
+}
+
+.user-create input[type=submit]:disabled {
+  background: rgb(160, 160, 160);
+  border-color: rgb(160, 160, 160);
 }
 input[type=date][value=""]::-webkit-datetime-edit{ color: transparent; }
 input[type=date]:focus::-webkit-datetime-edit{ color: black; }

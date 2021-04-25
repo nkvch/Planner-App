@@ -5,6 +5,8 @@ import UserCreate from './components/UserCreate';
 import Users from './components/Users';
 import './App.css';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { Redirect } from 'react-router';
+import CreateLoginPassword from './components/CreateLoginPassword';
 
 
 function App() {
@@ -13,11 +15,12 @@ function App() {
     <div className="App">
         <NavBar />
         <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/calendar" component={Calendar} />
-        <Route path="/users" component={Users} />
-        <Route path="/usercreate" component={UserCreate} />
-        </Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/calendar" component={Calendar} />
+          <Route path="/users" component={Users} />
+          <Route exact path="/usercreate" component={UserCreate} />
+          <Route path="/usercreate/login-password" component={CreateLoginPassword} />
+      </Switch>
     </div>
     </Router>
   );
