@@ -181,9 +181,7 @@ nav {
   padding-bottom: 20px;
   border: 0.5px solid black;
   border-radius: 10px;
-  transition-property: all;
-  transition-duration: 500ms;
-  transition-timing-function: cubic-bezier(0.27, 0.3, 0.45, 1.1);
+  transition: all 1s ease 1s;
   z-index: 10;
 }
 
@@ -218,6 +216,11 @@ button.changemonth.prev {
 button:hover {
   background-color: #1f5ec45e;
   cursor: pointer;
+}
+
+button:active {
+  background-color: #1a4fa5;
+  color: white;
 }
 
 .userslist-page {
@@ -283,6 +286,7 @@ button:hover {
   background: #357cda;
   border-color: #357cda;
   transition: all 0.2s ease 0s;
+  cursor: pointer;
 }
 
 
