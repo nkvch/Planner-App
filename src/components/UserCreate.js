@@ -14,7 +14,6 @@ class UserCreate extends React.Component {
     constructor(props) {
 
         super(props);
-
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -32,9 +31,8 @@ class UserCreate extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        UserService.postUser({firstName: this.state.firstName, lastName: this.state.lastName, email: this.state.email, dob: this.state.dob})
-        .then(() => this.setState({ redirect: true }));
-
+        UserService.getInfo(this.state);
+        this.setState({ redirect: true });
     }
 
     isValid() {

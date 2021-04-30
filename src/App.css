@@ -1,16 +1,19 @@
 * {
   box-sizing: border-box;
 }
+
 .App {
   width: 1200px;
   margin: auto;
   display: grid;
 }
+
 h1 {
   margin: 0;
   font-size: 40px;
   margin-bottom: 30px;
 }
+
 header {
   height: 100px;
   display: flex;
@@ -18,11 +21,13 @@ header {
   align-items: center;
   margin-bottom: 50px;
 }
+
 header .far{
   font-size: 80px;
   height: fit-content;
   color: #1a4fa5;
 }
+
 nav .links a {
   text-decoration: none;
   color: black;
@@ -36,10 +41,12 @@ nav .links a {
   justify-content: center;
   align-items: center;
 }
+
 nav .links a:visited {
   text-decoration: none;
   color: black;
 }
+
 nav .links a:hover{
   background-color: #1f5ec486;
   color: white;
@@ -47,9 +54,11 @@ nav .links a:hover{
   font-weight: 500;
   transition: all 0.2s ease 0s;
 }
+
 nav {
   width: 800px;
 }
+
 .links {
   width: 100%;
   list-style: none;
@@ -58,81 +67,164 @@ nav {
   padding: 0;
 
 }
+
 .home-page {
   display: flex;
   width: 800px;
   justify-self: center;
 }
+
 .home-page article h1 {
   margin: 0;
   font-size: 40px;
 }
+
 .home-page article p {
   line-height: 1.6;
 }
+
 .home-page .far {
   font-size: 300px;
   margin-left: 30px ;
   color: #1f5ec4;
 }
+
 .calendar-page {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: 
+    "title title"
+    "calendar calendar"
+    "prev-button next-button"
+  ;
   margin: auto;
   width: 800px;
+  margin-bottom: 100px;
 }
+
+.calendar-page .title {
+  grid-area: title;
+}
+
 .calendar {
+  grid-area: calendar;
   width: fit-content;
-  align-self: center;
+  margin: auto;
 }
+
 .table-calendar {
   width: fit-content;
 }
+
 .month-name {
   float: left;
 }
+
 .year-name {
   float: right;
 }
+
 .day {
   width: 100px;
   height: 100px;
-  border: 3px solid #1a4fa5;
+  border-width: 3px;
+  border-style: solid;
   border-radius: 0.5em;
   font-size: large;
+  position: relative;
 }
+
+.this-month-day {
+  border-color:  #1a4fa5;
+}
+
 .today {
   background-color: #1f5ec486;
-  width: 100px;
-  height: 100px;
-  border: 3px solid #1a4fa5;
-  border-radius: 0.5em;
-  font-size: large;
+  border-color:  #1a4fa5;
   color: white;
 }
+
 .other-day {
-  width: 100px;
-  height: 100px;
-  border: 3px solid #1f5ec486;
-  border-radius: 0.5em;
-  font-size: large;
+  border-color:  #1f5ec486;
   color: rgba(0, 0, 0, 0.5);
 }
+
+.selected-day {
+  background-color: #1a4fa5;
+  color: white;
+}
+
 .day > p , .today > p, .other-day > p {
   margin: 0;
   margin-top: 5px;
   margin-left: 5px;
 }
+
+.day:hover {
+  cursor: pointer;
+}
+
+.non-selected-day:hover {
+  background-color: #1f5ec45e;
+}
+
+.day-info {
+  position: absolute;
+  text-align: center;
+  width: 250px;
+  left: 90px;
+  top: -60px;
+  background-color: white;
+  color: black;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  transition-property: all;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.27, 0.3, 0.45, 1.1);
+  z-index: 10;
+}
+
 .week-days {
   text-align: center;
 }
+
 .weekend {
   color: #1f5ec4;
 }
+
+button.changemonth {
+  width: 150px;
+  height: 60px;
+  font-size: 30px;
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 3px solid #1a4fa5;
+  background-color: white;
+}
+
+button.changemonth.next {
+  grid-area: next-button;
+  justify-self: flex-end;
+}
+
+button.changemonth.prev {
+ grid-area: prev-button;
+ justify-self: flex-start;
+}
+
+button:hover {
+  background-color: #1f5ec45e;
+  cursor: pointer;
+}
+
 .userslist-page {
   width: 800px;
   justify-self: center;
 }
+
 .userslist {
   width: 700px;
   margin: auto;
@@ -140,12 +232,14 @@ nav {
   border: 3px solid #1a4fa5;
   border-radius: 1em;
 }
+
 .create-user-page {
   width: 800px;
   justify-self: center;
   display: flex;
   flex-direction: column;
 }
+
 .user-create {
   align-self: center;
   width: fit-content;
@@ -154,12 +248,14 @@ nav {
   flex-direction: column;
   align-items: center;
 }
+
 .user-create input {
   border: 2px solid #1a4fa5;
   border-radius: 1em;
   height: 30px;
   width: 250px;
 }
+
 .user-create input[type=text],
 .user-create input[type=email],
 .user-create input[type=date],
@@ -168,9 +264,11 @@ nav {
   margin-left: 20px;
   margin-bottom: 3px;
 }
+
 .user-create input[value="0000-00-00"]::-webkit-datetime-edit {
   color: transparent; 
 }
+
 .user-create input[type=submit] {
   margin-top: 20px;
   font-size: large;
@@ -180,18 +278,23 @@ nav {
   border: 3px solid #1f5ec4;
   width: 200px;
 }
+
 .user-create input[type=submit]:hover {
   background: #357cda;
   border-color: #357cda;
   transition: all 0.2s ease 0s;
 }
 
+
 .user-create input[type=submit]:disabled {
   background: rgb(160, 160, 160);
   border-color: rgb(160, 160, 160);
 }
+
 input[type=date][value=""]::-webkit-datetime-edit{ color: transparent; }
+
 input[type=date]:focus::-webkit-datetime-edit{ color: black; }
+
 
 input:focus,
 select:focus,
@@ -199,3 +302,4 @@ textarea:focus,
 button:focus {
     outline: none;
 }
+

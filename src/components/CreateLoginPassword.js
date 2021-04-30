@@ -10,7 +10,6 @@ class CreateLoginPassword extends React.Component {
     constructor(props) {
 
         super(props);
-
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -28,9 +27,8 @@ class CreateLoginPassword extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(this.state);
-        UserService.postLoginPassword(this.state);
-        this.props.history.push("/");
+        UserService.getInfo(this.state);
+        UserService.postUser().then(() => this.props.history.push("/"));
     }
 
     isValid() {
