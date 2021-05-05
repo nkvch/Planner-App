@@ -10,7 +10,6 @@ class DayProperties extends React.Component {
         return(
             <div className="day-properties">
             <p>This is {this.props.day.day}th {this.props.day.monthLong} {this.props.day.year}</p>
-            <button className="add">+</button>
           </div>
         )
     }
