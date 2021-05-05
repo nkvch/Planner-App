@@ -15,6 +15,7 @@ class Calendar extends React.Component{
         this.prevMonth = this.prevMonth.bind(this);
         this.nextMonth = this.nextMonth.bind(this);
         this.selectDay = this.selectDay.bind(this);
+        this.renderDay = this.renderDay.bind(this);
         this.state = {
             today: today,
             month: month,
@@ -34,6 +35,7 @@ class Calendar extends React.Component{
             year: newYear,
             firstDay: newFirstDay,
             lastDay: newLastDay,
+            selectedDay: undefined,
         })
     }
 
@@ -47,11 +49,39 @@ class Calendar extends React.Component{
             year: newYear,
             firstDay: newFirstDay,
             lastDay: newLastDay,
+            selectedDay: undefined,
         })
     }
 
     selectDay(day) {
         this.setState({selectedDay: day})
+    }
+
+    unselectDay(day) {
+        this.setState({selectedDay: undefined})
+    }
+
+    renderDay(day) {
+        if (day) {
+            return(
+                <td>
+                    <Day onClick={{
+                        select: () => this.selectDay(day),
+                        unselect: () => this.unselectDay(day),
+                        }} 
+                    day={day}
+                    isToday={day.toISODate() == this.state.today.toISODate()}
+                    currMonth={day.monthLong === this.state.month} 
+                    isSelected={this.state.selectedDay ? day.toISODate() === this.state.selectedDay.toISODate() : false}/>
+                </td>
+            )
+        } else {
+            return(
+                <td>
+                    <div className="day null-day"></div>
+                </td>
+            )
+        }
     }
 
     render() {
@@ -66,6 +96,13 @@ class Calendar extends React.Component{
                 } 
                 )
             )
+        }
+        //Block which makes calendar exactly 6 weeks, filling the free space with nulles which will be gray functionless squares
+        {
+        let l = calendar.length;
+        for(let i = 0; i < 6 - l; i++){
+            calendar.push(Array(7).fill(null))
+        }
         }
         return (
             <div className="calendar-page">
@@ -92,15 +129,7 @@ class Calendar extends React.Component{
                     calendar.map(week => 
                         <tr>
                             {
-                                week.map(day => 
-                                <td >
-                                    <Day onClick={() => this.selectDay(day)} 
-                                    day={day}
-                                    isToday={day.toISODate() == this.state.today.toISODate()}
-                                    currMonth={day.monthLong === this.state.month} 
-                                    isSelected={this.state.selectedDay ? day.toISODate() === this.state.selectedDay.toISODate() : false}/>
-                                </td>
-                                )
+                                week.map(day => this.renderDay(day))
                             }
                         </tr>
                         )

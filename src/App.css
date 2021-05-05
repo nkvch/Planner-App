@@ -3,7 +3,7 @@
 }
 
 .App {
-  width: 1200px;
+  min-width: 1000px;
   margin: auto;
   display: grid;
 }
@@ -125,6 +125,10 @@ nav {
   float: right;
 }
 
+.day-holder {
+  position: relative;
+}
+
 .day {
   width: 100px;
   height: 100px;
@@ -132,7 +136,10 @@ nav {
   border-style: solid;
   border-radius: 0.5em;
   font-size: large;
-  position: relative;
+}
+
+.null-day {
+  border-color: rgba(128, 128, 128, 0.288);
 }
 
 .this-month-day {
@@ -146,7 +153,7 @@ nav {
 }
 
 .other-day {
-  border-color:  #1f5ec486;
+  border-color:  #1f5ec442;
   color: rgba(0, 0, 0, 0.5);
 }
 
@@ -169,12 +176,12 @@ nav {
   background-color: #1f5ec45e;
 }
 
-.day-info {
+.day-properties {
   position: absolute;
   text-align: center;
   width: 250px;
-  left: 90px;
-  top: -60px;
+  left: -75px;
+  top: -120px;
   background-color: white;
   color: black;
   padding-top: 20px;

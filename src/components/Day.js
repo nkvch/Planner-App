@@ -1,4 +1,5 @@
 import React from 'react';
+import DayProperties from '../components/DayProperties';
 import { DateTime } from 'luxon';
 
 class Day extends React.Component {
@@ -25,27 +26,19 @@ class Day extends React.Component {
 
     render() {
         const className = this.chooseClass();
-        return <div onClick={this.props.onClick}
-         className={className}>
-         <p>{this.props.day.day}</p>
-         {this.props.isSelected ? <DayInfo day={this.props.day}/> : null}
-         </div>
-    }
-}
-
-class DayInfo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-    }
-    render() {
-        return(
-            <div className="day-info">
-            <p>This is {this.props.day.day}th {this.props.day.monthLong} {this.props.day.year}</p>
-          </div>
+        return( 
+        <div className="day-holder">
+            <div onClick={this.props.isSelected ? this.props.onClick.unselect : this.props.onClick.select}
+            className={className}>
+                <p>{this.props.day.day}</p>
+            </div>
+            {this.props.isSelected ? <DayProperties day={this.props.day}/> : null}
+        </div>
         )
     }
 }
+
+
 
 
 
